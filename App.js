@@ -17,6 +17,8 @@ export default function App() {
 
   const handleAddGoal=()=>{
     setGoalList(currentGoalList=>[...currentGoalList,{id:`ITEM-${currentGoalList.length+1}`,title:goal}])
+    setGoal('')
+    modalRef.current.close()
   }
 
   const handleCancelGoal=()=>{
@@ -34,7 +36,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar/>
-        <Button title="ADD" style={styles.button} onPress={()=>modalRef.current.open()}>Add</Button>
+        <Button title="Add New Goal" style={styles.button} onPress={()=>modalRef.current.open()}>Add</Button>
       <GoalInput
         goal={goal}
         handleAddGoal={handleAddGoal}

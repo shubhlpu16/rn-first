@@ -25,12 +25,15 @@ export default function GoalInput(props) {
            onChangeText={props.handleInput}>
          </TextInput>
          <View style={styles.buttonContainer}>
-        <Button title="ADD" style={styles.button} onPress={props.handleAddGoal} disabled={props.goal===''}/>
-        <Button title="Cancel" style={styles.button} onPress={props.handleCancelGoal}/>
+           <View style={styles.button}>
+              <Button title="ADD"  onPress={ props.handleAddGoal} disabled={props.goal===''}/>
+           </View>
+            <View  style={styles.button} >
+              <Button title="Cancel"color="red" onPress={props.handleCancelGoal}/>
+            </View>
         </View>
       </View>
       </RBSheet>
-
   );
 }
 
@@ -50,6 +53,9 @@ const styles = StyleSheet.create({
   buttonContainer:{
   flexDirection:'row',
   justifyContent: 'space-around',
-  width:'50%',
+  width:'60%',
+},
+  button: {
+    width:'40%',
   }
 });
